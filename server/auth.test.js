@@ -75,7 +75,7 @@ describe('/api/auth', () => {
 
       it('logs you out and redirects to whoami', () => agent
         .post('/api/auth/logout')
-        .expect(302)
+        .expect(200)
         .expect('Location', '/api/auth/whoami')
         .then(() =>
           agent.get('/api/auth/whoami')
